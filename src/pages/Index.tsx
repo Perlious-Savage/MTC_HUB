@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Calendar, Calculator, FileText, Menu, X, Home as HomeIcon } from 'lucide-react';
 import Home from '../components/Home';
@@ -20,7 +19,7 @@ const Index = () => {
   const renderActiveComponent = () => {
     switch (activeTab) {
       case 'home':
-        return <Home />;
+        return <Home setActiveTab={setActiveTab} />;
       case 'deadlines':
         return <DeadlineTracker />;
       case 'gpa':
@@ -28,7 +27,7 @@ const Index = () => {
       case 'notes':
         return <NotesSharing />;
       default:
-        return <Home />;
+        return <Home setActiveTab={setActiveTab} />;
     }
   };
 

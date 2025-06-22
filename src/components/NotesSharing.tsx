@@ -1,5 +1,5 @@
 
-import { ExternalLink, FolderOpen, ChevronDown, ChevronRight } from 'lucide-react';
+import { ExternalLink, FolderOpen, ChevronDown, ChevronRight, AlertCircle } from 'lucide-react';
 import { useState } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -43,6 +43,21 @@ const NotesSharing = () => {
         <h2 className="text-2xl font-bold text-white">Notes Sharing</h2>
         <p className="text-gray-400 mt-1">Access semester-wise notes and study materials</p>
       </div>
+
+      {/* Important Notice */}
+      <Card className="bg-orange-900/20 border-orange-700/50">
+        <CardContent className="p-4">
+          <div className="flex items-start space-x-3">
+            <AlertCircle className="w-5 h-5 text-orange-400 mt-0.5 flex-shrink-0" />
+            <div>
+              <p className="text-orange-300 font-medium">Important Note</p>
+              <p className="text-orange-200/80 text-sm mt-1">
+                Please use your college email ID to access the notes. Some folders may require permission from your institutional account.
+              </p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
 
       {/* Info Card */}
       <Card className="bg-blue-900/20 border-blue-700/50">

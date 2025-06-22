@@ -2,28 +2,35 @@
 import { Calendar, Calculator, FileText, Users, BookOpen, Trophy } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
-const Home = () => {
+interface HomeProps {
+  setActiveTab: (tab: string) => void;
+}
+
+const Home = ({ setActiveTab }: HomeProps) => {
   const features = [
     {
       icon: Calendar,
       title: 'Deadline Tracker',
       description: 'Never miss an assignment deadline again. Track all your submissions with smart reminders.',
       color: 'bg-blue-900/20 border-blue-700/50',
-      iconColor: 'text-blue-400'
+      iconColor: 'text-blue-400',
+      tabId: 'deadlines'
     },
     {
       icon: Calculator,
       title: 'GPA Calculator',
       description: 'Calculate your CGPA on a 10-point scale. Add subjects dynamically and track your academic progress.',
       color: 'bg-green-900/20 border-green-700/50',
-      iconColor: 'text-green-400'
+      iconColor: 'text-green-400',
+      tabId: 'gpa'
     },
     {
       icon: FileText,
       title: 'Notes Sharing',
       description: 'Access semester-wise study materials and notes shared by the MTC community.',
       color: 'bg-purple-900/20 border-purple-700/50',
-      iconColor: 'text-purple-400'
+      iconColor: 'text-purple-400',
+      tabId: 'notes'
     }
   ];
 
@@ -79,7 +86,11 @@ const Home = () => {
           {features.map((feature, index) => {
             const Icon = feature.icon;
             return (
-              <Card key={index} className={`${feature.color} hover:scale-105 transition-transform duration-200`}>
+              <Card 
+                key={index} 
+                className={`${feature.color} hover:scale-105 transition-transform duration-200 cursor-pointer`}
+                onClick={() => setActiveTab(feature.tabId)}
+              >
                 <CardHeader>
                   <CardTitle className="flex items-center space-x-3 text-white">
                     <Icon className={`w-6 h-6 ${feature.iconColor}`} />
@@ -88,6 +99,7 @@ const Home = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-300">{feature.description}</p>
+                  <p className="text-sm text-gray-400 mt-2">Click to access →</p>
                 </CardContent>
               </Card>
             );
