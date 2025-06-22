@@ -1,15 +1,17 @@
 
 import { useState } from 'react';
-import { Calendar, Calculator, FileText, Menu, X } from 'lucide-react';
+import { Calendar, Calculator, FileText, Menu, X, Home as HomeIcon } from 'lucide-react';
+import Home from '../components/Home';
 import DeadlineTracker from '../components/DeadlineTracker';
 import GpaCalculator from '../components/GpaCalculator';
 import NotesSharing from '../components/NotesSharing';
 
 const Index = () => {
-  const [activeTab, setActiveTab] = useState('deadlines');
+  const [activeTab, setActiveTab] = useState('home');
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const tabs = [
+    { id: 'home', label: 'Home', icon: HomeIcon },
     { id: 'deadlines', label: 'Deadline Tracker', icon: Calendar },
     { id: 'gpa', label: 'GPA Calculator', icon: Calculator },
     { id: 'notes', label: 'Notes', icon: FileText },
@@ -17,6 +19,8 @@ const Index = () => {
 
   const renderActiveComponent = () => {
     switch (activeTab) {
+      case 'home':
+        return <Home />;
       case 'deadlines':
         return <DeadlineTracker />;
       case 'gpa':
@@ -24,7 +28,7 @@ const Index = () => {
       case 'notes':
         return <NotesSharing />;
       default:
-        return <DeadlineTracker />;
+        return <Home />;
     }
   };
 

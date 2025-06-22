@@ -13,16 +13,15 @@ interface Semester {
 const NotesSharing = () => {
   const [expandedSemesters, setExpandedSemesters] = useState<number[]>([]);
 
-  // Placeholder Google Drive links - to be replaced manually
   const semesters: Semester[] = [
-    { id: 1, name: 'Semester 1', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-1' },
-    { id: 2, name: 'Semester 2', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-2' },
-    { id: 3, name: 'Semester 3', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-3' },
-    { id: 4, name: 'Semester 4', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-4' },
-    { id: 5, name: 'Semester 5', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-5' },
-    { id: 6, name: 'Semester 6', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-6' },
-    { id: 7, name: 'Semester 7', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-7' },
-    { id: 8, name: 'Semester 8', driveLink: 'https://drive.google.com/drive/folders/placeholder-semester-8' },
+    { id: 1, name: '1 Sem (Thermo Sem)', driveLink: 'https://drive.google.com/drive/folders/19WVdeY2Bfg-L_Lq5Lh14uaAbv_2laks3?usp=drive_link' },
+    { id: 2, name: '2 Sem (Bio Sem)', driveLink: 'https://drive.google.com/drive/folders/1f2Tvs-r4z8Q2EqbPdW_UwwFYqvaHDiTJ?usp=drive_link' },
+    { id: 3, name: '3 Sem', driveLink: 'https://drive.google.com/drive/folders/12PI0bqSz7AubtrtrrNp675dz1mXBpweO?usp=drive_link' },
+    { id: 4, name: '4 Sem', driveLink: 'https://drive.google.com/drive/folders/1fkInQ4z9EYhJ6rga3invtCnWCXgponAM?usp=drive_link' },
+    { id: 5, name: 'Practice School 1', driveLink: 'https://drive.google.com/drive/folders/1quQP7MFKekpLoYzAqJNDhtAKyf8WvC5N?usp=drive_link' },
+    { id: 6, name: '5 Sem', driveLink: 'https://drive.google.com/drive/folders/1QdAJVI9wqA0N_F57eZznVzgIGRLIdSF_?usp=drive_link' },
+    { id: 7, name: '6 Sem', driveLink: 'https://drive.google.com/drive/folders/17UeVcoI55_GhkHqLMqyWMwh78BjzQptG?usp=drive_link' },
+    { id: 8, name: '7 Sem', driveLink: 'https://drive.google.com/drive/folders/1swzmv4wuawelZCOlWGTYHAnNI0stQamO?usp=drive_link' },
   ];
 
   const toggleSemester = (semesterId: number) => {
